@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melissa Withorn — Creative Director</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #0c0c0c;
+      min-height: 100vh;
+    }
+
+    .r {
+      max-width: 960px;
+      margin: 0 auto;
+      color: #c8c2b8;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      line-height: 1.7;
+      padding: 3rem 3rem 4rem;
+    }
+
+    /* ── HEADER ── */
+    .r-head { margin-bottom: 2rem; }
+
+    .r-row1 {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #2a2620;
+    }
+
+    .r-name {
+      font-family: 'Cormorant', serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: #e8e3da;
+      white-space: nowrap;
+    }
+
+    .r-pills { display: flex; align-items: baseline; gap: 20px; }
+
+    .r-pill {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6e6a64;
+      line-height: 1;
+    }
+
+    .r-row2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #1e1c1a;
+    }
+
+    .r-status {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .dot-wrap { position: relative; width: 6px; height: 6px; flex-shrink: 0; }
+
+    .dot-core, .dot-ring {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      position: absolute; top: 0; left: 0;
+    }
+
+    .dot-active .dot-core { background: #4a9e6a; }
+    .dot-active .dot-ring { background: #4a9e6a; animation: pulse 2s ease-out infinite; }
+    .dot-inactive .dot-core { background: #333; }
+
+    @keyframes pulse {
+      0%   { opacity: 0.6; transform: scale(1); }
+      70%  { opacity: 0; transform: scale(2.6); }
+      100% { opacity: 0; transform: scale(2.6); }
+    }
+
+    .r-meta { display: flex; align-items: center; gap: 12px; line-height: 1; }
+
+    .r-meta-item {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: #4e4a46;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .r-meta-sep { font-size: 9px; color: #2a2620; line-height: 1; }
+
+    /* ── BODY ── */
+    .r-body {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 0 3rem;
+    }
+
+    .slabel {
+      font-size: 8.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #706a62;
+      border-top: 1px solid #222;
+      padding-top: 9px;
+      margin-bottom: 1rem;
+    }
+
+    .section { margin-bottom: 2rem; }
+
+    .intro {
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+      font-size: 15.5px;
+      font-weight: 300;
+      color: #9a9288;
+      line-height: 1.35;
+    }
+
+    /* Experience */
+    .agency-block { margin-bottom: 1.75rem; }
+
+    .agency-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .agency-name { font-size: 11px; font-weight: 500; color: #e2ddd6; letter-spacing: 0.01em; }
+    .agency-tenure { font-size: 9px; color: #585450; letter-spacing: 0.06em; white-space: nowrap; flex-shrink: 0; }
+
+    .role-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 2px;
+      padding-left: 10px;
+      border-left: 1px solid #222;
+    }
+
+    .role-title { font-size: 9.5px; color: #9a8a6e; letter-spacing: 0.04em; flex: 1; }
+    .role-date { font-size: 9px; color: #484440; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0; }
+
+    .role { margin-bottom: 1.75rem; }
+
+    .rh {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1px;
+    }
+
+    .rc { font-size: 11px; font-weight: 500; color: #e2ddd6; letter-spacing: 0.01em; }
+    .rd { font-size: 9px; color: #585450; letter-spacing: 0.06em; white-space: nowrap; flex-shrink: 0; }
+    .rt { font-size: 9.5px; color: #9a8a6e; letter-spacing: 0.04em; margin-bottom: 5px; }
+
+    .rp {
+      font-size: 10.5px;
+      color: #8a8278;
+      line-height: 1.78;
+      margin-top: 6px;
+    }
+
+    /* Education */
+    .edu-row { margin-bottom: 0.9rem; }
+    .edu-school { font-size: 11px; font-weight: 500; color: #e2ddd6; letter-spacing: 0.01em; margin-bottom: 1px; }
+    .edu-degree { font-size: 9.5px; color: #8a8278; letter-spacing: 0.03em; }
+
+    /* ── SIDEBAR ── */
+    .side-section { margin-bottom: 1.6rem; }
+
+    .tag-grid { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+
+    .tag {
+      font-size: 8.5px;
+      padding: 2px 8px;
+      border: 0.5px solid #222;
+      color: #686460;
+      letter-spacing: 0.05em;
+    }
+
+    .tag-hi { border-color: #6a5e4a; color: #9a8a6e; }
+
+    .work-item { margin-bottom: 10px; }
+
+    .work-link {
+      display: block;
+      font-size: 9.5px;
+      color: #9a8a6e;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      line-height: 1.4;
+    }
+
+    .work-link:hover { color: #c8b898; }
+
+    .work-sub {
+      display: block;
+      font-size: 9px;
+      color: #505050;
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    .brands-list { margin-top: 7px; display: flex; flex-direction: column; gap: 3px; }
+    .brand-item { font-size: 9.5px; color: #686460; letter-spacing: 0.04em; line-height: 1.4; }
+
+    .yaml {
+      background: #0f0f0f;
+      border: 1px solid #1a1a1a;
+      padding: 10px 12px;
+      margin-top: 7px;
+      font-size: 9px;
+      line-height: 1.95;
+      border-radius: 2px;
+    }
+
+    .yk { color: #585450; }
+    .yv { color: #686460; }
+    .ys { color: #9a8a6e; }
+
+    /* ── FOOTER ── */
+    .r-foot {
+      border-top: 1px solid #1e1c1a;
+      margin-top: 2rem;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8.5px;
+      color: #302e2b;
+      letter-spacing: 0.12em;
+      line-height: 1;
+    }
+
+    .r-foot a { color: #585450; text-decoration: none; }
+    .r-foot a:hover { color: #9a8a6e; }
+
+    @keyframes up {
+      from { opacity: 0; transform: translateY(5px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .r-head { animation: up 0.3s ease both 0.05s; }
+    .r-body { animation: up 0.3s ease both 0.15s; }
+
+    @media (max-width: 680px) {
+      .r { padding: 2rem 1.5rem 3rem; }
+      .r-body { grid-template-columns: 1fr; }
+      .r-row1 { flex-direction: column; gap: 12px; }
+      .r-row2 { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .r-meta { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="r">
+
+    <div class="r-head">
+      <div class="r-row1">
+        <div class="r-name">Melissa Withorn</div>
+        <div class="r-pills">
+          <span class="r-pill">Creative Direction</span>
+          <span class="r-pill">Agency Leadership</span>
+          <span class="r-pill">Art Direction</span>
+        </div>
+      </div>
+      <div class="r-row2">
+        <div class="r-status">
+          <div class="dot-wrap" id="statusDot">
+            <div class="dot-core"></div>
+            <div class="dot-ring"></div>
+          </div>
+          <span id="statusText" style="color:#484440;">EST Remote</span>
+        </div>
+        <div class="r-meta">
+          <span class="r-meta-item">15 yrs experience</span>
+          <span class="r-meta-sep">·</span>
+          <span class="r-meta-item">Fortune 100 · Agency</span>
+          <span class="r-meta-sep">·</span>
+          <span class="r-meta-item">AI-native practice</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="r-body">
+      <div>
+
+        <div class="section">
+          <div class="slabel">Profile</div>
+          <p class="intro">Creative director with 15 years leading brand, campaign, and experiential work for Fortune 100 and global clients. Built and managed creative teams across major agency environments — from ACD to VP, Group CD. Now operating independently at the frontier of AI-native creative systems, with a builder's mindset and a strategist's eye.</p>
+        </div>
+
+        <div class="section">
+          <div class="slabel">Experience</div>
+
+          <div class="role">
+            <div class="rh">
+              <span class="rc">Fractional Chief Creative &amp; Brand Officer</span>
+              <span class="rd">2023 — Present</span>
+            </div>
+            <div class="rt">Self-employed · Remote</div>
+            <p class="rp">Fractional creative leadership embedded in founder-led and established brands. Overseeing creative direction, brand strategy, narrative development, and team leadership on an engagement basis — spanning brand world-building, campaign concepting, and creative culture.</p>
+          </div>
+
+          <div class="agency-block">
+            <div class="agency-header">
+              <span class="agency-name">Dagger</span>
+              <span class="agency-tenure">2018 — 2023 · 4 yrs 10 mos</span>
+            </div>
+            <div class="role-row">
+              <span class="role-title">VP, Group Creative Director</span>
+              <span class="role-date">Oct 2021 — Aug 2023</span>
+            </div>
+            <div class="role-row">
+              <span class="role-title">Creative Director, Group Lead</span>
+              <span class="role-date">Oct 2020 — Nov 2021</span>
+            </div>
+            <div class="role-row">
+              <span class="role-title">Creative Director</span>
+              <span class="role-date">Sep 2019 — Oct 2020</span>
+            </div>
+            <div class="role-row" style="margin-bottom:6px;">
+              <span class="role-title">Associate Creative Director</span>
+              <span class="role-date">Nov 2018 — Nov 2019</span>
+            </div>
+            <p class="rp" style="padding-left:10px;">Led integrated campaigns and brand-level creative across Fortune 100 and consumer clients. Progressed from ACD to VP, Group CD over five years — building and managing creative teams, owning client relationships, and driving work from brief through launch.</p>
+          </div>
+
+          <div class="role">
+            <div class="rh">
+              <span class="rc">Associate Creative Director</span>
+              <span class="rd">2016 — 2018</span>
+            </div>
+            <div class="rt">Public School · ATL / LA</div>
+            <p class="rp">Experiential creative across brand activations, retail environments, and live events. Designed physical and spatial narratives for clients in fashion, culture, and consumer goods — translating brand identity into environments people could move through and feel.</p>
+          </div>
+
+          <div class="role">
+            <div class="rh">
+              <span class="rc">Art Director</span>
+              <span class="rd">2011 — 2016</span>
+            </div>
+            <div class="rt">GO! Experience Design</div>
+            <p class="rp">Concepted and executed brand experiences across digital and spatial media — designing immersive environments where architecture, content, and interaction worked as a single system. Led the year-long design and build of a permanent Mercedes-Benz brand museum.</p>
+          </div>
+
+        </div>
+
+        <div class="section">
+          <div class="slabel">Education</div>
+          <div class="edu-row">
+            <div class="edu-school">University of North Carolina at Chapel Hill</div>
+            <div class="edu-degree">BA, Journalism &amp; Mass Communication</div>
+          </div>
+          <div class="edu-row">
+            <div class="edu-school">The Portfolio Center</div>
+            <div class="edu-degree">Graduate Certificate, Design</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="side-section">
+          <div class="slabel">My Work</div>
+          <div class="work-item">
+            <a class="work-link" href="https://melissawithorn.com" target="_blank">melissawithorn.com</a>
+            <span class="work-sub">Portfolio &amp; case studies</span>
+          </div>
+          <div class="work-item">
+            <a class="work-link" href="https://castcreative.io" target="_blank">castcreative.io</a>
+            <span class="work-sub">SaaS product in active development</span>
+          </div>
+          <div class="work-item">
+            <a class="work-link" href="https://insecureadgirl.com" target="_blank">insecureadgirl.com</a>
+            <span class="work-sub">Writing &amp; industry commentary</span>
+          </div>
+        </div>
+
+        <div class="side-section">
+          <div class="slabel">Brands</div>
+          <div class="brands-list">
+            <span class="brand-item">Mercedes-Benz</span>
+            <span class="brand-item">Aflac</span>
+            <span class="brand-item">Alle</span>
+            <span class="brand-item">Welch's</span>
+            <span class="brand-item">Carter's</span>
+            <span class="brand-item">Canva</span>
+            <span class="brand-item">IHG Hotels</span>
+            <span class="brand-item">MINI</span>
+          </div>
+        </div>
+
+        <div class="side-section">
+          <div class="slabel">Core Skills</div>
+          <div class="tag-grid">
+            <span class="tag tag-hi">Creative Direction</span>
+            <span class="tag tag-hi">Agency Leadership</span>
+            <span class="tag tag-hi">Integrated Campaigns</span>
+            <span class="tag tag-hi">AI Tools</span>
+            <span class="tag">Brand Identity</span>
+            <span class="tag">Art Direction</span>
+            <span class="tag">Experiential</span>
+            <span class="tag">Content Systems</span>
+            <span class="tag">Pitching</span>
+            <span class="tag">Creative Ops</span>
+            <span class="tag">Team Building</span>
+          </div>
+        </div>
+
+        <div class="side-section">
+          <div class="slabel">Machine-readable</div>
+          <div class="yaml">
+            <span class="yk">name:</span> <span class="ys">"Melissa Withorn"</span><br>
+            <span class="yk">role:</span> <span class="ys">"Creative Director"</span><br>
+            <span class="yk">yoe:</span> <span class="yv">15</span><br>
+            <span class="yk">timezone:</span> <span class="ys">"EST"</span><br>
+            <span class="yk">remote:</span> <span class="yv">true</span><br>
+            <span class="yk">ai_fluency:</span> <span class="ys">"high"</span><br>
+            <span class="yk">agency_bg:</span> <span class="yv">true</span><br>
+            <span class="yk">peak_title:</span> <span class="ys">"VP, Group CD"</span><br>
+            <span class="yk">education:</span><br>
+            &nbsp;&nbsp;<span class="yv">- UNC Chapel Hill, BA</span><br>
+            &nbsp;&nbsp;<span class="yv">- Portfolio Center, Design</span><br>
+            <span class="yk">disciplines:</span><br>
+            &nbsp;&nbsp;<span class="yv">- integrated campaigns</span><br>
+            &nbsp;&nbsp;<span class="yv">- experiential / spatial</span><br>
+            &nbsp;&nbsp;<span class="yv">- brand strategy</span><br>
+            &nbsp;&nbsp;<span class="yv">- creative leadership</span><br>
+            <span class="yk">brands:</span><br>
+            &nbsp;&nbsp;<span class="yv">- Mercedes-Benz</span><br>
+            &nbsp;&nbsp;<span class="yv">- Aflac</span><br>
+            &nbsp;&nbsp;<span class="yv">- Alle</span><br>
+            &nbsp;&nbsp;<span class="yv">- Welch's</span><br>
+            &nbsp;&nbsp;<span class="yv">- Carter's</span><br>
+            &nbsp;&nbsp;<span class="yv">- Canva</span><br>
+            &nbsp;&nbsp;<span class="yv">- IHG Hotels</span><br>
+            &nbsp;&nbsp;<span class="yv">- MINI</span><br>
+            <span class="yk">portfolio:</span> <span class="ys">"melissawithorn.com"</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="r-foot">
+      <span>MELISSA WITHORN &nbsp;·&nbsp; 2026</span>
+      <span>
+        <a href="https://melissawithorn.com" target="_blank">melissawithorn.com</a>
+        &nbsp;·&nbsp;
+        <a href="https://castcreative.io" target="_blank">castcreative.io</a>
+        &nbsp;·&nbsp;
+        <a href="https://insecureadgirl.com" target="_blank">insecureadgirl.com</a>
+      </span>
+    </div>
+
+  </div>
+
+  <script>
+    (function() {
+      var dot = document.getElementById('statusDot');
+      var txt = document.getElementById('statusText');
+      function update() {
+        var now = new Date();
+        var utc = now.getTime() + now.getTimezoneOffset() * 60000;
+        var est = new Date(utc - 5 * 3600000);
+        var h = est.getHours();
+        var active = h >= 9 && h < 18;
+        dot.className = 'dot-wrap ' + (active ? 'dot-active' : 'dot-inactive');
+        txt.style.color = active ? '#4a9e6a' : '#484440';
+      }
+      update();
+      setInterval(update, 60000);
+    })();
+  </script>
+
+</body>
+</html>
